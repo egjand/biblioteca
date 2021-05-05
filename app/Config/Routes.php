@@ -32,9 +32,15 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Libros::index');
+$routes->get('/', 'Home::index');
 $routes->get('/libros', 'Books::index');
+$routes->get('/revistas', 'Hemeroteca::index');
+$routes->get('/revistas/(:num)', 'Hemeroteca::muestra');
+
 $routes->resource('libros', ['controller'=>'Books']);
+
+
+
 
 
 /*
